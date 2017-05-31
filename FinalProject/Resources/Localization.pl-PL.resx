@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ErrorEmail" xml:space="preserve">
-    <value>Error Mail</value>
+    <value>Zły adres email</value>
   </data>
   <data name="ErrorLogin" xml:space="preserve">
-    <value>Wrong Login</value>
+    <value>Zły Login</value>
   </data>
   <data name="ErrorPassword" xml:space="preserve">
-    <value>Error Password</value>
+    <value>Złe hasło</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Nazwa użytkownika</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Email</value>
+    <value>Adres Email</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Hasło</value>
   </data>
 </root>

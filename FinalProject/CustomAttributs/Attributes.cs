@@ -20,7 +20,7 @@ namespace FinalProject.CustomAttributs
             if (user == null)
                 return ValidationResult.Success;
             else
-                return new ValidationResult("Login already exist");
+                return new ValidationResult("Login 1111 already exist");
 
         }
     }

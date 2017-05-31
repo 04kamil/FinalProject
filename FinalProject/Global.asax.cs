@@ -1,4 +1,5 @@
-﻿using FinalProject.Models;
+﻿using FinalProject.DAL;
+using FinalProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace FinalProject
                 time = DateTime.Now,
                 log = exc.Message
             };
+            LogRepository.Create(l);
             int i = Response.StatusCode;
             Server.ClearError();
             Response.Redirect("~/Error/ErrorMessage");

@@ -28,19 +28,24 @@ namespace FinalProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registration([Bind(Include = "UserID,Login,Password,Email")] User u)
+        public ActionResult Registration(User u)
         {
             if (ModelState.IsValid)
             {
+                u.Active = false;
+                u.AccountType = 0;
                 UserRepository.Create(u);
+
                 Guid g = Guid.NewGuid();
-                RegistrationRepository.Create(new Registration()
+                Registration r = new Registration()
                 {
                     ConfirmRegistrationCode = g.ToString(),
                     EmailSend = DateTime.Now,
                     EmailExpired = DateTime.Now.AddDays(2),
-                    Uzk = u
-                });
+                    Uzk = u,
+                };
+                RegistrationRepository.Create(r);
+               
                 SendMail(u.Email.ToString(),g.ToString());
                 return RedirectToAction("Index");
             }

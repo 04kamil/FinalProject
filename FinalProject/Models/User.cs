@@ -13,7 +13,6 @@ namespace FinalProject.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
 
-        [LogisExist]
         [Display(Name = "Login", ResourceType = typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorLogin", ErrorMessageResourceType = typeof(Resources.Localization))]
         public string Login { get; set; }

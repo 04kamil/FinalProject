@@ -156,6 +156,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomAttributs\Attributes.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
+    <Compile Include="DAL\LogRepository.cs" />
     <Compile Include="DAL\FinalProjectContext.cs" />
     <Compile Include="DAL\RegistrationRepository.cs" />
     <Compile Include="DAL\UserRepository.cs" />
@@ -249,6 +250,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Localization.pl-PL.resx" />
     <EmbeddedResource Include="Resources\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
