@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinalProject.DAL;
+using FinalProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,18 @@ namespace FinalProject.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (FinalProjectContext db = new FinalProjectContext())
+            {
+                db.Authors.Add(new Author()
+                {
+                    Name = "platon",
+                    DateOfBirth = "123",
+                    DateOfDeath = "ops",
+                    Descryption = "jakis opis"
+                    
+                });
+            }
+                return View();
         }
 
         public ActionResult About()
