@@ -30,11 +30,12 @@ namespace FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Registration(User u)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)             //pierwsza sprawdzenie czy jest user
             {
                 u.Active = false;
                 u.AccountType = 0;
-                UserRepository.Create(u);
+                u.UserID = Guid.NewGuid();
+                
 
                 Guid g = Guid.NewGuid();
                 Registration r = new Registration()
@@ -44,10 +45,10 @@ namespace FinalProject.Controllers
                     EmailExpired = DateTime.Now.AddDays(2),
                     Uzk = u,
                 };
-                RegistrationRepository.Create(r);
-               
+                RegistrationRepository.Create(r);           //czemu tu sprawdza
+                UserRepository.Create(u);                   //tu też!!!???
                 SendMail(u.Email.ToString(),g.ToString());
-                return RedirectToAction("Index");
+                return RedirectToAction("Registration");
             }
 
             return View(u);
@@ -130,6 +131,9 @@ namespace FinalProject.Controllers
             Session["Logged"] = null;
             return Redirect("Index");
         }
+
+
+
 
 
     }

@@ -5,14 +5,15 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FinalProject.Models
 {
     public class User
     {
+        [LogisExist]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
-
         [Display(Name = "Login", ResourceType = typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorLogin", ErrorMessageResourceType = typeof(Resources.Localization))]
         public string Login { get; set; }
