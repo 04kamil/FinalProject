@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.CustomAttributs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,6 +13,7 @@ namespace FinalProject.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
 
+        [LogisExist]
         [Display(Name = "Login", ResourceType = typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorLogin", ErrorMessageResourceType = typeof(Resources.Localization))]
         public string Login { get; set; }
@@ -28,6 +30,7 @@ namespace FinalProject.Models
         [Required]
         public int AccountType { get; set; }
 
+        [MailExist]
         [Display(Name = "Email", ResourceType = typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorEmail", ErrorMessageResourceType = typeof(Resources.Localization))]
         [DataType(DataType.EmailAddress)]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,21 @@ namespace FinalProject
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exc = Server.GetLastError();
+            Log l = new Log()
+            {
+                time = DateTime.Now,
+                log = exc.Message
+            };
+            int i = Response.StatusCode;
+            Server.ClearError();
+            Response.Redirect("~/Error/ErrorMessage");
+            
+
         }
     }
 }

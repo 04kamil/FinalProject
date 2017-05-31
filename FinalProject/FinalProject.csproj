@@ -149,6 +149,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="CustomAttributs\Attributes.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
     <Compile Include="DAL\FinalProjectContext.cs" />
+    <Compile Include="DAL\RegistrationRepository.cs" />
     <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -231,6 +233,9 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\Error\ErrorMessage.cshtml" />
+    <Content Include="Views\Error\WrongLoginOrPassword.cshtml" />
+    <Content Include="Views\Shared\_login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
