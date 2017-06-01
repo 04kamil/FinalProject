@@ -153,12 +153,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomAttributs\Attributes.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
+    <Compile Include="DAL\BookRepository.cs" />
     <Compile Include="DAL\LogRepository.cs" />
     <Compile Include="DAL\FinalProjectContext.cs" />
     <Compile Include="DAL\RegistrationRepository.cs" />
+    <Compile Include="DAL\SaleRepository.cs" />
     <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +245,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Log\" />
     <Folder Include="Views\Registration\" />
+    <Folder Include="Views\Sale\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

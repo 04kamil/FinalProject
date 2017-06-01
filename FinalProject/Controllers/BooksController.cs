@@ -18,17 +18,17 @@ namespace FinalProject.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            return View(BookRepository.GetList());
         }
 
         // GET: Books/Details/5
-        public ActionResult Details(Guid? id)
+        public ActionResult Details(Guid id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            Book book = BookRepository.Get(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -51,9 +51,7 @@ namespace FinalProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                book.BookId = Guid.NewGuid();
-                db.Books.Add(book);
-                db.SaveChanges();
+                BookRepository.Create(book);
                 return RedirectToAction("Index");
             }
 
@@ -61,13 +59,13 @@ namespace FinalProject.Controllers
         }
 
         // GET: Books/Edit/5
-        public ActionResult Edit(Guid? id)
+        public ActionResult Edit(Guid id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            Book book = BookRepository.Get(id);
             if (book == null)
             {
                 return HttpNotFound();
